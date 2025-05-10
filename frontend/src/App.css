@@ -1,0 +1,167 @@
+/* App.css */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Using a modern sans-serif font stack. Consider importing 'Inter' or 'Manrope' via Google Fonts for a more distinct look. */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa; /* Very light grey, almost off-white background */
+  color: #212529; /* Darker primary text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure full viewport coverage even if content is short */
+  margin: 0;
+  padding: 20px; /* Add some padding to the body for smaller screens */
+}
+
+/* Main Container - renamed from .App to align with your TSX className usage (if App is the outer wrapper)
+   If .App is meant to be the card, then keep it as .App and ensure your TSX has <div className="App"> as the card.
+   Assuming .App from your original CSS is the card-like element.
+*/
+.App {
+  /* This should be the main card component */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff; /* White background */
+  border-radius: 12px; /* Slightly larger radius */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* Softer, more diffused shadow */
+  width: 100%;
+  max-width: 650px; /* Slightly wider */
+}
+
+/* Header - Targets the className="header" on your h1 in App.tsx */
+.header {
+  /* Was h1 */
+  color: #4f46e5; /* Modern Indigo/Purple accent */
+  font-size: 2.25rem; /* Adjusted size */
+  margin-bottom: 30px; /* More spacing */
+  font-weight: 700;
+}
+
+/* Input Field - Targets className="input-field" on your input in App.tsx */
+.input-field {
+  /* Was input */
+  background-color: #f1f3f5; /* Light background for input */
+  color: #343a40;
+  padding: 15px; /* More padding */
+  width: 100%; /* Adjusted in media query below for consistency */
+  margin-bottom: 25px;
+  border: 1px solid transparent; /* Borderless by default */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4f46e5; /* Indigo border on focus */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Focus ring */
+}
+
+/* Button - Targets className="generate-btn" on your button in App.tsx */
+.generate-btn {
+  /* Was button */
+  background-color: #4f46e5; /* Indigo accent */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Adjusted in media query below for consistency */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.generate-btn:hover {
+  background-color: #4338ca; /* Darker Indigo on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.generate-btn:disabled,
+.generate-btn.loading {
+  /* Added .loading for consistency */
+  background-color: #adb5bd; /* Neutral disabled state */
+  cursor: not-allowed;
+  transform: translateY(0);
+}
+
+/* Article Section */
+.article {
+  background-color: #f8f9fa; /* Consistent light grey background */
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 35px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle inset-like shadow */
+  text-align: left;
+  width: 100%;
+}
+
+/* Article Headline - Targets className="article-headline" on your h2 in App.tsx */
+.article-headline {
+  /* Was .article h2 */
+  color: #4f46e5; /* Indigo accent for headline */
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.article p {
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.7; /* Improved line height for readability */
+  color: #495057; /* Slightly lighter text for paragraphs */
+}
+
+.article strong {
+  color: #212529; /* Darker text for emphasis */
+  font-weight: 600;
+}
+
+/* Error Message */
+.error {
+  color: #e03131; /* Vivid Red for error messages */
+  margin-top: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .App {
+    padding: 25px;
+    margin: 15px; /* Add some margin on mobile */
+    width: auto; /* Allow it to take available width within body padding */
+  }
+
+  .header {
+    /* Was h1 */
+    font-size: 1.8rem;
+  }
+
+  /* Ensure input and button take full width inside .App on mobile */
+  .input-field,
+  .generate-btn {
+    width: 100%;
+  }
+}
+/* Styling for the bot image */
+.bot-image {
+  width: 150px; /* Adjust the width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 20px auto; /* Center the image with some margin */
+}
