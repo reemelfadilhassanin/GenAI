@@ -1,27 +1,25 @@
-# GenAI: Simple Content Generator using LangChain Expression Language (LCEL)
+# 📝 AI Article Generator
 
-## 📌 Project Overview
+## Project Overview
 
-**GenAI** is a simple, modular content generation system built with **LangChain.js** and **LangChain Expression Language (LCEL)**. It takes a user-provided topic or keywords and generates a structured piece of content—such as a blog post or article—by composing a sequence of language model prompts using LCEL’s `.pipe()` syntax.
+**AI Article Generator** is a simple, modular content generation web app built with **LangChain.js** and  **LangChain Expression Language (LCEL)** . It allows users to input a topic and receive a fully structured article, including:
+
+* Headline
+* Introduction
+* Body
+* Conclusion
+
+The app combines a **React frontend** and a **Node.js + LangChain backend** using LCEL's `.pipe()` syntax to create a smooth content generation experience.
+
+---
+
+## How It Works
 
 ### Flow Summary
 
-- **User Input**: Provide a topic or keyword.
-- **Process Flow**:
-  - Generate a **headline**.
-  - Generate an **introduction**.
-  - Generate a **body paragraph**.
-  - Generate a **conclusion**.
-- **Output**: A cohesive, structured content piece.
+1. **User Input** : Enter a topic in the web UI.
+2. **Processing (Backend)** :
 
----
+* LCEL pipelines generate each article section in order.
 
-## Project Structure
-
-The project is divided into three phases:
-
-1. **Input Phase** – Accept topic or keywords.
-2. **Process Phase** – Run a chain of model prompts using `.pipe()` via `RunnableSequence`.
-3. **Output Phase** – Print or return the final generated content.
-
----
+1. **Output** : Display the complete article in the browser.
